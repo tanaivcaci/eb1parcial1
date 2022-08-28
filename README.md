@@ -5,7 +5,7 @@ Llegamos a la evaluación parcial donde pondremos en práctica todos los conocim
 vistos hasta el momento, tanto en clase como en Playground. 
 
 
-Consigna
+# Consigna
 A partir de la siguiente arquitectura de microservicios, te pedimos implementar la misma
 utilizando Spring Cloud.
 
@@ -49,6 +49,6 @@ La respuesta tiene la siguiente estructura:
         + genre
         + urlStream
 
-Test
+# Test
 Agregar una película de género “Acción” en el microservicio movie y consultar el catálogo
 mediante request al endpoint /catalog/{genre} (catalog-service).
