@@ -13,7 +13,7 @@ spring:
     password: sa
   sql:
     init:
-      data-locations: classpath:movies.sql
+      data-locations: classpath:movie-service.sql
   jpa:
     defer-datasource-initialization: true
     hibernate:
