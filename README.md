@@ -2,9 +2,9 @@
 
 Examen parcial
 Llegamos a la evaluación parcial donde pondremos en práctica todos los conocimientos
-vistos hasta el momento, tanto en clase como en Playground. Tal como pudiste observar en
-los criterios de evaluación, tendrás el tiempo de la clase para realizar la consigna y recibirás la
-nota vía mail en el transcurso de una semana. ¡Éxitos!
+vistos hasta el momento, tanto en clase como en Playground. 
+
+
 Consigna
 A partir de la siguiente arquitectura de microservicios, te pedimos implementar la misma
 utilizando Spring Cloud.
@@ -43,11 +43,11 @@ obtener películas.
 
 La respuesta tiene la siguiente estructura:
 ● genre
-○ movies
-■ id
-■ name
-■ genre
-■ urlStream
+  ○ movies
+    ■ id
+    ■ name
+    ■ genre
+    ■ urlStream
 
 Test
 Agregar una película de género “Acción” en el microservicio movie y consultar el catálogo
