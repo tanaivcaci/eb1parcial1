@@ -25,7 +25,7 @@ Luego, configurar el puerto de cada microservicio desde un repositorio de Git:
 - Propiedad:
 - server.port=
 
-# movie-service
+## movie-service
 Es una API REST que nos permite traer las películas por género. El endpoint deberá ser:
 /movies/{genre}. Cada película tiene como atributo:
 - id
@@ -33,7 +33,7 @@ Es una API REST que nos permite traer las películas por género. El endpoint de
 - genre
 - urlStream
 
-# catalog-service
+## catalog-service
 API REST que nos permite buscar en el catálogo por género. Por el momento solo
 buscaremos películas. El endpoint deberá ser: /catalog/{genre}.
 
@@ -49,6 +49,6 @@ La respuesta tiene la siguiente estructura:
         + genre
         + urlStream
 
-# Test
+## Test
 Agregar una película de género “Acción” en el microservicio movie y consultar el catálogo
 mediante request al endpoint /catalog/{genre} (catalog-service).
