@@ -4,6 +4,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 management:
+  info:
+    env:
+      enabled: true
   endpoints:
     web:
       exposure:
