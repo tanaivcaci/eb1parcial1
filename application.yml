@@ -10,6 +10,6 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,serviceregistry
+        include: health,info
 
 global-message: This is a global message for all services
