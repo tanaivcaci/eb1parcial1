@@ -1,37 +1,19 @@
 server:
-  port: ${PORT:8080}
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+  port: 8080
 
 spring:
   cloud:
     gateway:
-      default-filters: #filtro por defecto de todas las request realizadas al gateway
-        -name: LogFilter
       routes:
-        - id: movieRoute 				#Identifico la ruta del service de Movie
-          uri: lb://movie-service 		#URL para el redirect segun lo definido en el predicate / lb: loadbalancer
-          predicates: 					#Reglas de análisis de una request
+        - id: movieRoute 
+          uri: http://localhost:8082/ 
+          predicates: 
             - Path=/movies/**
-        - id: catalogRoute 				#Identifico la ruta del service de Catalog
-          uri: lb://catalog-service 	#URL para el redirect segun lo definido en el predicate
-          predicates: 					#Reglas de análisis de una request
+        - id: catalogRoute
+          uri: http://localhost:8084/  
+          predicates: 
             - Path=/catalog/**
-          filters:
-            - AddRequestHeader=catalog-request-header, custom-catalog-request-header
-            - AddResponseHeader=catalog-respons-header, custom-catalog-response-header
-            
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,gateway
-
-info:
-  app:
-    name: gateway-service
-    description: Gateway Service
-    version: 1.0.0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
