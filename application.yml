@@ -11,3 +11,5 @@ management:
     web:
       exposure:
         include: health,info,serviceregistry
+
+global-message: This is a global message for all services

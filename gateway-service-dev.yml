@@ -1,6 +1,7 @@
 server:
-  port: 8081
-  
+  port: ${PORT:8081}
+message: Gateway configuration. Server is alive for DEV profile
+
 spring:
   eureka:
     client:
