@@ -23,6 +23,7 @@ spring:
           filters:
             - AddRequestHeader=catalog-request-header, custom-catalog-request-header
             - AddResponseHeader=catalog-respons-header, custom-catalog-response-header
+            
 management:
   endpoints:
     web:
