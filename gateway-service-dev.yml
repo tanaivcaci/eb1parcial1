@@ -4,16 +4,34 @@ server:
 spring:
   cloud:
     gateway:
+      default-filters:
+        - name: LogFilter
       routes:
         - id: movieRoute 
-          uri: http://localhost:8082/ 
+          uri: lb://movie-service
           predicates: 
             - Path=/movies/**
         - id: catalogRoute
-          uri: http://localhost:8084/  
+          uri: lb://catalog-service
           predicates: 
             - Path=/catalog/**
+          filters:
+            - AddRequestHeader=catalog-request-header, custom-catalog-request-header
+            - AddResponseHeader=catalog-respons-header, custom-catalog-response-header
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+
+info:
+  app:
+    name: gateway-service
+    description: Gateway Service
+    version: 1.0.0
