@@ -5,11 +5,16 @@ message: Gateway configuration. Server is alive for DEV profile
 spring:
   cloud:
     gateway:
+      default-filters: #filtro por defecto de todas las request realizadas al gateway
+        -name: LogFilter
       routes:
         - id: movieRoute 				#Identifico la ruta del service de Movie
           uri: lb://movie-service 		#URL para el redirect segun lo definido en el predicate / lb: loadbalancer
           predicates: 					#Reglas de análisis de una request
             - Path=/movies/**
+          filters:
+            - AddRequestHeader=movies-request-header, custom-movies-request-header
+            - AddResponseHeader=movies-respons-header, custom-movies-response-header
         - id: catalogRoute 				#Identifico la ruta del service de Catalog
           uri: lb://catalog-service 	#URL para el redirect segun lo definido en el predicate
           predicates: 					#Reglas de análisis de una request
